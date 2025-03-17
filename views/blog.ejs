@@ -1,0 +1,24 @@
+<%- include ("partials/header.ejs" ) %>
+
+
+<body>
+
+
+    <main class="blog-container">
+        <% blogs.forEach(blog => { %>
+            <div class="blog-card">
+                <img src="<%= blog.image %>" alt="<%= blog.title %>">
+                <div class="blog-content">
+                    <h2><%= blog.title %></h2>
+                    <p><%= blog.content.substring(0, 100) %>...</p>
+                    <a href="/post/<%= blog.id %>" class="btn">Read More</a>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+
+    
+</body>
+</html>
+
+<%- include ("partials/footer.ejs") %>
